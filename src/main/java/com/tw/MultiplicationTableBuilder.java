@@ -15,7 +15,17 @@ public class MultiplicationTableBuilder {
     }
 
     public String build(int start, int end) {
-        return "";
+        return printMultiplicationTableByStartAndEnd(start, end);
+    }
+
+    // Main method to validate input and generate the multiplication table
+    public static String printMultiplicationTableByStartAndEnd(int start, int end) {
+        // Validate the input range
+        if (isValidInput(start, end)) {
+            // Generate the multiplication table
+            return generateMultiplicationTable(start, end);
+        }
+        return null;
     }
 
     // 1、isValidInput
