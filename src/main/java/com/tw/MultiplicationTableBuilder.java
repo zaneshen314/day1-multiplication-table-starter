@@ -14,4 +14,13 @@ public class MultiplicationTableBuilder {
     public String build(int start, int end) {
         return "";
     }
+
+    // 1.1 isValidInputOnRange
+    public static boolean isValidInputOnRange(int start, int end) {
+        if (start < 2 || start > 1000 || end < 1 || end > 1000) {
+            System.out.println("The numbers out of Range");
+            return false;
+        }
+        return true;
+    }
 }
