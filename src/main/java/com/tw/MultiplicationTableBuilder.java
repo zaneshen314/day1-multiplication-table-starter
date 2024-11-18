@@ -15,6 +15,11 @@ public class MultiplicationTableBuilder {
         return "";
     }
 
+    // 1、isValidInput
+    private static boolean isValidInput(int start, int end) {
+        return isValidInputOnRange(start,end) && isStartValueSmallerEndValue(start,end);
+    }
+
     // 1.1 isValidInputOnRange
     public static boolean isValidInputOnRange(int start, int end) {
         if (start < 2 || start > 1000 || end < 1 || end > 1000) {
