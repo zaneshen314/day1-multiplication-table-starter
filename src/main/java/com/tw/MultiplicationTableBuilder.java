@@ -23,4 +23,13 @@ public class MultiplicationTableBuilder {
         }
         return true;
     }
+
+    // 1.2 isStartValueSmallerEndValue
+    public static boolean isStartValueSmallerEndValue(int start, int end) {
+        if (end < start) {
+            System.out.println("The end number must be greater than or equal to the start number!");
+            return false;
+        }
+        return true;
+    }
 }
