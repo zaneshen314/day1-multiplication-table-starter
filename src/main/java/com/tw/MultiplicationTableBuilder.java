@@ -1,5 +1,8 @@
 package com.tw;
 
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 public class MultiplicationTableBuilder {
 
     public static void main(String[] args) {
@@ -37,4 +40,13 @@ public class MultiplicationTableBuilder {
         }
         return true;
     }
+
+    // 2.1 Generate one row of the multiplication table
+    private static String generateMultiplicationRow(int start, int rowIndex) {
+        int end = start + rowIndex;
+        return IntStream.rangeClosed(start, end)
+                .mapToObj(i -> String.format("%d*%d=%d", i, end, i * end))
+                .collect(Collectors.joining(" ")); // Join expressions with a space
+    }
+
 }
