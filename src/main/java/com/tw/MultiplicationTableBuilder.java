@@ -5,6 +5,9 @@ import java.util.stream.IntStream;
 
 public class MultiplicationTableBuilder {
 
+    public static int  MIN_RANGE =  1;
+    public static int  MAX_RANGE =  1000;
+
     public static void main(String[] args) {
         MultiplicationTableBuilder builder = new MultiplicationTableBuilder();
         int start = 2;
@@ -30,12 +33,12 @@ public class MultiplicationTableBuilder {
 
     // 1、isValidInput
     private static boolean isValidInput(int start, int end) {
-        return isValidInputOnRange(start,end) && isStartValueSmallerEndValue(start,end);
+        return isValidInputOnRange(start) && isValidInputOnRange(end) && isStartValueSmallerEndValue(start,end);
     }
 
     // 1.1 isValidInputOnRange
-    public static boolean isValidInputOnRange(int start, int end) {
-        return start >= 1 && start <= 1000 && end >= 1 && end <= 1000;
+    public static boolean isValidInputOnRange(int number) {
+        return number >= MIN_RANGE && number <= MAX_RANGE;
     }
 
     // 1.2 isStartValueSmallerEndValue
