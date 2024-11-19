@@ -35,8 +35,7 @@ public class MultiplicationTableBuilder {
 
     // 1.1 isValidInputOnRange
     public static boolean isValidInputOnRange(int start, int end) {
-        if (start < 2 || start > 1000 || end < 1 || end > 1000) {
-            System.out.println("The numbers out of Range");
+        if (start < 1 || start > 1000 || end < 1 || end > 1000) {
             return false;
         }
         return true;
@@ -44,11 +43,7 @@ public class MultiplicationTableBuilder {
 
     // 1.2 isStartValueSmallerEndValue
     public static boolean isStartValueSmallerEndValue(int start, int end) {
-        if (end < start) {
-            System.out.println("The end number must be greater than or equal to the start number!");
-            return false;
-        }
-        return true;
+        return start <= end;
     }
 
     // 2.2 Generate the entire multiplication table
