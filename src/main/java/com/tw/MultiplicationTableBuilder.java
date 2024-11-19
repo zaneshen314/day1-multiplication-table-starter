@@ -48,9 +48,10 @@ public class MultiplicationTableBuilder {
 
     // 2.2 Generate the entire multiplication table
     public static String generateMultiplicationTable(int start, int end) {
+        String lineSeparator = System.lineSeparator();
         return IntStream.range(0, end - start + 1) // Loop through rows
                 .mapToObj(i -> generateMultiplicationRow(start, i))
-                .collect(Collectors.joining("\r\n")) + "\r\n"; // Add a newline at the end
+                .collect(Collectors.joining(lineSeparator)) + lineSeparator; // Add a newline at the end
     }
 
     // 2.1 Generate one row of the multiplication table
